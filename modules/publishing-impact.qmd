@@ -1,0 +1,28 @@
+---
+title: "Publishing and Research Impact"
+description: "Navigate publishing choices and explore research visibility and impact."
+---
+
+<p class="module-label">Module 5 of 5</p>
+
+::: {.page-lead}
+Navigate scholarly publishing choices and explore ways to understand and strengthen the visibility and impact of your research.
+:::
+
+::: {.h5p-placeholder}
+<div class="h5p-placeholder__icon" aria-hidden="true">▶</div>
+
+## Interactive book placeholder
+
+The H5P Interactive Book for this module will be embedded here. A direct link will also be provided for opening it in a separate window.
+:::
+
+::: {.module-note}
+**Having trouble with an embedded book?** The published module will always include a clearly labelled fallback link beneath the book.
+:::
+
+::: {.module-navigation}
+[Previous: Research Data Management](research-data-management.qmd){.module-previous}
+
+[Return to all modules](../index.qmd#modules){.module-next}
+:::

@@ -1,0 +1,9 @@
+/.quarto/
+/_site/
+/.cache/
+
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+*.swp
+*~

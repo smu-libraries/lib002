@@ -1,0 +1,28 @@
+---
+title: "Working with Data"
+description: "Explore considerations and Library resources for finding and working with research data."
+---
+
+<p class="module-label">Module 3 of 5</p>
+
+::: {.page-lead}
+Explore key considerations and Library resources that can help you find, understand and work with data in your research.
+:::
+
+::: {.h5p-placeholder}
+<div class="h5p-placeholder__icon" aria-hidden="true">▶</div>
+
+## Interactive book placeholder
+
+The H5P Interactive Book for this module will be embedded here. A direct link will also be provided for opening it in a separate window.
+:::
+
+::: {.module-note}
+**Having trouble with an embedded book?** The published module will always include a clearly labelled fallback link beneath the book.
+:::
+
+::: {.module-navigation}
+[Previous: Literature Review and Reference Management](literature-review.qmd){.module-previous}
+
+[Next: Research Data Management](research-data-management.qmd){.module-next}
+:::

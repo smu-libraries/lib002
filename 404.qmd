@@ -1,0 +1,16 @@
+---
+title: "Page not found"
+description: "The requested LIB002 page could not be found."
+page-layout: full
+title-block-style: none
+---
+
+::: {.not-found}
+<p class="eyebrow">Error 404</p>
+
+# We could not find that page
+
+The address may be incorrect, or the page may have moved. You can return to the homepage, explore the modules, or use the site search in the navigation bar.
+
+[Go to the homepage](index.qmd){.btn .btn-primary .btn-lg} [Explore modules](index.qmd#modules){.btn .btn-outline-primary .btn-lg}
+:::

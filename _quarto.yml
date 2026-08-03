@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "modules/*.qmd"
+
+lang: en
+
+website:
+  title: "LIB002"
+  description: "Graduate Research Essentials from SMU Libraries"
+  site-url: "https://smu-libraries.github.io/lib002/"
+  search: true
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar:
+    title: "LIB002"
+    left:
+      - text: "Explore modules"
+        menu:
+          - text: "Introduction to Library Services"
+            href: modules/library-services.qmd
+          - text: "Literature Review and Reference Management"
+            href: modules/literature-review.qmd
+          - text: "Working with Data"
+            href: modules/working-with-data.qmd
+          - text: "Research Data Management"
+            href: modules/research-data-management.qmd
+          - text: "Publishing and Research Impact"
+            href: modules/publishing-impact.qmd
+      - text: "Support"
+        href: support.qmd
+      - text: "About"
+        href: about.qmd
+  page-footer:
+    border: false
+    left: "LIB002: Graduate Research Essentials"
+    center: "Developed by SMU Libraries"
+    right:
+      - text: "Support"
+        href: support.qmd
+      - text: "About"
+        href: about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - assets/styles.scss
+    toc: false
+    anchor-sections: true
+    link-external-icon: true
+    link-external-newwindow: true
+    code-copy: true

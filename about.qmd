@@ -1,0 +1,32 @@
+---
+title: "About LIB002"
+description: "Learn about the purpose and scope of LIB002: Graduate Research Essentials."
+---
+
+::: {.page-lead}
+LIB002 is a self-paced learning resource developed by SMU Libraries for postgraduate researchers and research staff.
+:::
+
+## What this resource offers
+
+The five interactive modules introduce key research skills, tools, resources and Library support across the research lifecycle:
+
+1. Introduction to Library Services
+2. Literature Review and Reference Management
+3. Working with Data
+4. Research Data Management
+5. Publishing and Research Impact
+
+You may explore the modules in any order and return to individual topics whenever they become relevant to your work.
+
+## Scope
+
+LIB002 is intended as an accessible starting point and reference resource. It does not replace discipline-specific research methods training, supervisory guidance, or specialist advice.
+
+## Accessibility
+
+We aim to make LIB002 clear, usable and accessible across devices and ways of navigating. If you encounter an accessibility barrier, please [contact the Library](support.qmd) so that we can help and improve the resource.
+
+::: {.callout-note title="Content details to confirm before launch"}
+Add the appropriate institutional ownership statement, accessibility contact route, and review date once these have been confirmed.
+:::

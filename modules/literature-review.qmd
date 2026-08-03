@@ -1,0 +1,28 @@
+---
+title: "Literature Review and Reference Management"
+description: "Explore approaches and tools for finding literature and managing references."
+---
+
+<p class="module-label">Module 2 of 5</p>
+
+::: {.page-lead}
+Develop a more confident approach to discovering, evaluating and organising scholarly literature and managing the references you use.
+:::
+
+::: {.h5p-placeholder}
+<div class="h5p-placeholder__icon" aria-hidden="true">▶</div>
+
+## Interactive book placeholder
+
+The H5P Interactive Book for this module will be embedded here. A direct link will also be provided for opening it in a separate window.
+:::
+
+::: {.module-note}
+**Having trouble with an embedded book?** The published module will always include a clearly labelled fallback link beneath the book.
+:::
+
+::: {.module-navigation}
+[Previous: Introduction to Library Services](library-services.qmd){.module-previous}
+
+[Next: Working with Data](working-with-data.qmd){.module-next}
+:::

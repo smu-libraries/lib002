@@ -1,0 +1,134 @@
+---
+title: "LIB002: Graduate Research Essentials"
+description: "Explore essential research skills, tools, resources and Library support across the research lifecycle."
+page-layout: full
+title-block-style: none
+---
+
+:::: {.lib-hero}
+::: {.lib-hero__content}
+<p class="eyebrow">SMU Libraries</p>
+
+# Graduate Research Essentials
+
+Build confidence with the skills, tools and Library support that can help you throughout the research lifecycle.
+
+[Explore the modules](#modules){.btn .btn-primary .btn-lg} [How to use LIB002](#how-to-use){.btn .btn-outline-primary .btn-lg}
+:::
+
+::: {.lib-hero__aside}
+<p class="hero-note__label">Designed for</p>
+
+Postgraduate researchers and research staff at any stage of their work.
+
+<hr>
+
+<p class="hero-note__label">Learn your way</p>
+
+Start anywhere, focus on what you need, and return whenever a question arises.
+:::
+::::
+
+::: {.content-band .content-band--intro}
+## A practical starting point
+
+LIB002 is a self-paced learning resource developed by SMU Libraries. It introduces essential research practices and points you towards useful tools, resources and specialist support.
+
+It is not a comprehensive research methods course. Think of it as a welcoming front door: use it to orient yourself, strengthen a particular skill, or find the next source of help.
+:::
+
+::: {#modules .content-band}
+<p class="eyebrow">Five interactive books</p>
+
+## Explore the modules
+
+The modules complement one another, but there is no required order. Choose the topic that is most useful to you now.
+
+::: {.module-grid}
+::: {.module-card}
+<span class="module-card__number" aria-hidden="true">01</span>
+
+### Introduction to Library Services
+
+Discover the services, collections and expertise available to support your research at SMU.
+
+[Explore Introduction to Library Services](modules/library-services.qmd){.module-card__link}
+:::
+
+::: {.module-card}
+<span class="module-card__number" aria-hidden="true">02</span>
+
+### Literature Review and Reference Management
+
+Find, evaluate and organise scholarly literature, and manage references more effectively.
+
+[Explore Literature Review and Reference Management](modules/literature-review.qmd){.module-card__link}
+:::
+
+::: {.module-card}
+<span class="module-card__number" aria-hidden="true">03</span>
+
+### Working with Data
+
+Explore considerations and Library resources for finding, understanding and working with data.
+
+[Explore Working with Data](modules/working-with-data.qmd){.module-card__link}
+:::
+
+::: {.module-card}
+<span class="module-card__number" aria-hidden="true">04</span>
+
+### Research Data Management
+
+Plan how research data will be organised, documented, stored, shared and preserved.
+
+[Explore Research Data Management](modules/research-data-management.qmd){.module-card__link}
+:::
+
+::: {.module-card}
+<span class="module-card__number" aria-hidden="true">05</span>
+
+### Publishing and Research Impact
+
+Navigate publishing choices and learn how research visibility and impact can be understood.
+
+[Explore Publishing and Research Impact](modules/publishing-impact.qmd){.module-card__link}
+:::
+:::
+:::
+
+::: {#how-to-use .content-band .content-band--soft}
+## How to use LIB002
+
+::: {.feature-grid}
+::: {.feature-item}
+### Choose what you need
+
+Each module stands on its own. Begin with a current question or explore all five over time.
+:::
+
+::: {.feature-item}
+### Learn interactively
+
+Every module contains an embedded H5P Interactive Book. A direct link is also provided if the book does not load.
+:::
+
+::: {.feature-item}
+### Return as you progress
+
+Bookmark individual module pages and revisit them at different stages of your research.
+:::
+:::
+:::
+
+::: {.support-panel}
+::: {.support-panel__content}
+## Research is easier with the right support
+
+LIB002 is a starting point. SMU Libraries can help you move from general guidance to support for your own research needs.
+:::
+
+::: {.support-panel__action}
+[Find Library support](support.qmd){.btn .btn-light .btn-lg}
+:::
+:::

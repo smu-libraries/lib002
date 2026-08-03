@@ -1,0 +1,40 @@
+---
+title: "Library support"
+description: "Find further help from SMU Libraries for your research."
+---
+
+::: {.page-lead}
+The modules provide a starting point. When you need help applying the guidance to your own research, SMU Libraries is here to support you.
+:::
+
+::: {.support-options}
+::: {.support-option}
+### Ask a question
+
+Contact the Library for help locating resources, using research tools, or identifying the most appropriate next step.
+
+**Contact link to be confirmed**
+:::
+
+::: {.support-option}
+### Get research support
+
+Connect with Library specialists for more focused guidance related to your topic, discipline or stage of research.
+
+**Consultation link to be confirmed**
+:::
+
+::: {.support-option}
+### Use Library services
+
+Visit the SMU Libraries website for databases, collections, facilities and current service information.
+
+**Library website link to be confirmed**
+:::
+:::
+
+::: {.callout-important title="Before this site is published"}
+Replace the three placeholder lines above with the official contact, consultation and Library website links.
+:::
+
+[Return to all modules](index.qmd#modules){.btn .btn-outline-primary}
