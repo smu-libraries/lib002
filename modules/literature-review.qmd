@@ -9,16 +9,73 @@ description-meta: "Approaches and tools for finding, evaluating and organising s
 How to build a literature search you can account for, and habits that keep references manageable as a project grows.
 :::
 
-::: {.h5p-placeholder}
-<div class="h5p-placeholder__icon" aria-hidden="true">▶</div>
+::: {.module-contents}
+## In this module
 
-## Interactive book placeholder
+Three interactive books, written to follow on from one another. You can still open any of them on its own.
 
-The H5P Interactive Book for this module will be embedded here. A direct link will also be provided for opening it in a separate window.
+1. [Defining Your Research Question](#defining-your-research-question)
+2. [Basic Literature Review](#basic-literature-review)
+3. [Organizing Your References](#organizing-your-references)
 :::
 
+<!-- Loaded before the iframes on purpose. The resizer runs immediately and
+     pokes contentWindow on every h5p iframe it can already see, which forces
+     lazy ones to load. Placed first it sees none, and instead picks each book
+     up from the "hello" the iframe posts when it actually loads. -->
+<script src="https://smu.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+
+<p class="book-label">Book 1 of 3</p>
+
+## Defining Your Research Question
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292623430406959609/embed"
+  title="Interactive book: Defining Your Research Question"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
 ::: {.module-note}
-**Having trouble with an embedded book?** The published module will always include a clearly labelled fallback link beneath the book.
+If this interactive book does not load, [open Defining Your Research Question in a new window](https://smu.h5p.com/content/1292623430406959609){target="_blank" rel="noopener"}.
+:::
+
+<p class="book-label">Book 2 of 3</p>
+
+## Basic Literature Review
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292743544143028209/embed"
+  title="Interactive book: Basic Literature Review"
+  loading="lazy"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
+::: {.module-note}
+If this interactive book does not load, [open Basic Literature Review in a new window](https://smu.h5p.com/content/1292743544143028209){target="_blank" rel="noopener"}.
+:::
+
+<p class="book-label">Book 3 of 3</p>
+
+## Organizing Your References
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292627958615413189/embed"
+  title="Interactive book: Organizing Your References"
+  loading="lazy"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
+::: {.module-note}
+If this interactive book does not load, [open Organizing Your References in a new window](https://smu.h5p.com/content/1292627958615413189){target="_blank" rel="noopener"}.
 :::
 
 ::: {.module-navigation}

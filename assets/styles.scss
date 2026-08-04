@@ -387,6 +387,49 @@ main.content {
   margin-top: 0.5rem;
 }
 
+// Modules that hold several interactive books open with a short contents
+// list, so a visitor knows how many there are before scrolling past the first.
+.module-contents {
+  margin-bottom: 1rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--lib-slate-pale);
+  border-radius: 0.8rem;
+}
+
+.module-contents h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.module-contents p {
+  color: var(--lib-muted);
+}
+
+.module-contents ol {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+.module-contents li {
+  margin-bottom: 0.3rem;
+}
+
+.book-label {
+  margin-top: 4.5rem;
+  margin-bottom: 0.3rem;
+  color: var(--lib-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+// Quarto wraps each heading in a section, so the label is a sibling of the
+// section rather than of the h2 itself.
+.book-label + section > h2 {
+  margin-top: 0;
+}
+
 .h5p-placeholder {
   display: grid;
   place-content: center;

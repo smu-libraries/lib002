@@ -29,7 +29,7 @@ These instructions apply to the whole repository.
 
 Every module page must include:
 
-1. A unique page title and meta description.
+1. A unique page title and `description-meta`. Use `description-meta`, not `description`: the latter also renders as a visible line in the title block, which duplicates the page lead.
 2. Its position stated as “Module N of 5”; this is orientation, not a completion requirement.
 3. A concise introduction that does not repeat the book.
 4. An H5P iframe with a descriptive `title` and an HTTPS embed URL.
@@ -37,7 +37,23 @@ Every module page must include:
 6. Previous/next navigation or a route back to all modules.
 7. A route to Library support through the global navigation/footer.
 
-Do not insert a bare iframe without the fallback link. Do not assume iframe embedding works merely because the public H5P URL loads; verify the provider's embed URL and headers.
+Do not insert a bare iframe without the fallback link. Do not assume iframe embedding works merely because the public H5P URL loads; verify the provider's embed URL and headers. The public H5P page sends `X-Frame-Options: SAMEORIGIN` and `frame-ancestors 'none'`, so only the `/embed` variant can be framed; the public URL is what the fallback link points at.
+
+Keep the `allow` attribute narrow. The embed code H5P hands out grants autoplay, geolocation, microphone, camera and midi; an interactive book needs none of those, so use `allow="fullscreen"` unless a specific book demonstrably needs more.
+
+### Modules with more than one book
+
+Some modules are made up of several books. Those pages keep one URL and stack the books, and additionally need:
+
+- a short “In this module” contents list naming every book, so the number of them is visible before scrolling;
+- one `h2` per book, with a `Book N of M` label above it;
+- a separate fallback link under each book.
+
+Load `h5p-resizer.js` **once per page, before the first iframe**. It is an immediately-invoked script that, at the end, walks every h5p iframe already in the document and posts to its `contentWindow`; touching `contentWindow` instantiates the frame and defeats `loading="lazy"`. Placed before the iframes it sees none, and picks each book up instead from the `hello` message the iframe posts when it loads. One copy handles every iframe on the page — the embed code repeats the script tag, and those repeats should be dropped.
+
+Give the first book eager loading and the rest `loading="lazy"`. Note that lazy behaviour cannot be observed in a non-rendering browser context: if the page is not being composited, `visibilityState` is `hidden`, viewport intersection is never evaluated and every frame loads regardless. Check deferral in a real browser window, not a headless or hidden one.
+
+Each book costs roughly 97 requests and a full H5P runtime instance. Bandwidth is partly shared through the HTTP cache since all books come from the same origin, but script parsing and memory are per frame and are not. If a module grows past about five books, or the page becomes sluggish on a mid-range phone, move to loading each book on demand instead of stacking them.
 
 ## Accessibility and content checks
 
