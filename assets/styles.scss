@@ -1,13 +1,21 @@
 /*-- scss:defaults --*/
 
-$primary: #28645d;
-$secondary: #6b7774;
-$body-color: #243431;
-$body-bg: #fffdfa;
-$link-color: #1f625a;
-$link-hover-color: #164b45;
-$font-family-sans-serif: Inter, Aptos, "Segoe UI", system-ui, -apple-system, sans-serif;
-$headings-font-family: Georgia, "Times New Roman", serif;
+// SMU brand palette. SMU Blue and SMU Gold are the institutional colours;
+// Slate Blue and Light Slate are the approved supporting tones. Anything else
+// here is a tint of one of those, never a new hue.
+$primary: #141c52;
+$secondary: #4f557d;
+$body-color: #000000;
+$body-bg: #ffffff;
+$link-color: #141c52;
+$link-hover-color: #8a704c;
+
+// SMU digital typography: Oswald for headlines, Open Sans for body copy.
+// Disables the Bootswatch theme's Google Fonts import so the site makes no
+// third-party requests and no visitor IP reaches Google.
+$web-font-path: false;
+$font-family-sans-serif: "Open Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+$headings-font-family: Oswald, "Arial Narrow", "Segoe UI", system-ui, sans-serif;
 $headings-font-weight: 600;
 $border-radius: 0.4rem;
 $border-radius-lg: 0.8rem;
@@ -15,17 +23,67 @@ $navbar-padding-y: 0.85rem;
 
 /*-- scss:rules --*/
 
+// Self-hosted so the site makes no third-party requests. Paths are relative to
+// the compiled theme stylesheet in _site/site_libs/bootstrap/.
+@font-face {
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/web/oswald-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 600;
+  src: url("assets/fonts/web/oswald-600.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/web/opensans-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("assets/fonts/web/opensans-400i.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("assets/fonts/web/opensans-600.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/fonts/web/opensans-700.woff2") format("woff2");
+  font-display: swap;
+}
+
 :root {
-  --lib-ink: #243431;
-  --lib-muted: #60706c;
-  --lib-green: #28645d;
-  --lib-green-dark: #174a45;
-  --lib-green-soft: #e9f2ef;
-  --lib-cream: #f7f1e7;
-  --lib-gold: #c69845;
-  --lib-border: #d9e2df;
-  --lib-white: #fffdfa;
-  --lib-shadow: 0 18px 45px rgba(35, 62, 57, 0.09);
+  --lib-ink: #000000;
+  --lib-navy: #141c52;
+  --lib-muted: #4f557d;
+  --lib-gold: #8a704c;
+  --lib-slate: #c5cadf;
+  --lib-slate-light: #dde0ed;
+  --lib-slate-pale: #ebecf4;
+  --lib-border: #c5cadf;
+  --lib-white: #ffffff;
+  --lib-shadow: 0 18px 45px rgba(20, 28, 82, 0.1);
 }
 
 html {
@@ -42,10 +100,12 @@ a {
   text-decoration-thickness: 0.08em;
 }
 
+// SMU Gold clears 3:1 against white, Light Slate and SMU Blue, so the ring
+// stays visible on every surface the site actually uses.
 a:focus-visible,
 button:focus-visible,
 .btn:focus-visible {
-  outline: 3px solid #d6a84f;
+  outline: 3px solid var(--lib-gold);
   outline-offset: 3px;
   box-shadow: none;
 }
@@ -53,8 +113,7 @@ button:focus-visible,
 h1,
 h2,
 h3 {
-  color: var(--lib-ink);
-  letter-spacing: -0.018em;
+  color: var(--lib-navy);
 }
 
 h1 {
@@ -66,17 +125,26 @@ h2 {
 }
 
 .navbar {
-  background: rgba(255, 253, 250, 0.96);
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--lib-border);
   backdrop-filter: blur(12px);
 }
 
 .navbar-brand {
-  color: var(--lib-green-dark);
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--lib-navy);
+  font-family: Oswald, "Arial Narrow", sans-serif;
   font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+// Quarto caps navbar logos at 24px, which is too small for a lockup that
+// carries the word "Libraries" alongside the crest.
+.navbar-brand img {
+  height: 1.95rem;
+  max-height: none;
+  width: auto;
+  margin-right: 0.75rem;
 }
 
 .navbar-nav .nav-link {
@@ -86,7 +154,7 @@ h2 {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: var(--lib-green);
+  color: var(--lib-gold);
 }
 
 .quarto-title-block .quarto-title-banner,
@@ -124,8 +192,8 @@ main.content {
   left: 0;
   height: 610px;
   background:
-    radial-gradient(circle at 82% 20%, rgba(198, 152, 69, 0.16), transparent 22rem),
-    linear-gradient(135deg, #f1f6f3 0%, #fffdfa 56%, #faf2e5 100%);
+    radial-gradient(circle at 82% 20%, rgba(138, 112, 76, 0.1), transparent 22rem),
+    linear-gradient(135deg, #ebecf4 0%, #ffffff 56%, #e2e4ef 100%);
   content: "";
 }
 
@@ -138,7 +206,7 @@ main.content {
 .lib-hero__content > p:not(.eyebrow) {
   max-width: 720px;
   margin-bottom: 2rem;
-  color: #40534f;
+  color: var(--lib-muted);
   font-size: clamp(1.15rem, 2vw, 1.38rem);
 }
 
@@ -148,11 +216,11 @@ main.content {
 
 .lib-hero__aside {
   padding: 2rem;
-  background: rgba(255, 253, 250, 0.8);
-  border: 1px solid rgba(40, 100, 93, 0.18);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(20, 28, 82, 0.15);
   border-radius: 0.8rem;
   box-shadow: var(--lib-shadow);
-  color: #435650;
+  color: var(--lib-muted);
 }
 
 .lib-hero__aside hr {
@@ -165,9 +233,9 @@ main.content {
 .eyebrow,
 .module-label {
   margin-bottom: 0.65rem;
-  color: var(--lib-green);
+  color: var(--lib-navy);
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -219,18 +287,18 @@ main.content {
   background: var(--lib-white);
   border: 1px solid var(--lib-border);
   border-radius: 0.8rem;
-  box-shadow: 0 8px 24px rgba(35, 62, 57, 0.05);
+  box-shadow: 0 8px 24px rgba(20, 28, 82, 0.06);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .module-card:first-child {
   grid-column: span 2;
   min-height: 250px;
-  background: var(--lib-green-soft);
+  background: var(--lib-slate-light);
 }
 
 .module-card:hover {
-  border-color: #9abbb5;
+  border-color: var(--lib-muted);
   box-shadow: var(--lib-shadow);
   transform: translateY(-3px);
 }
@@ -239,9 +307,10 @@ main.content {
   display: block;
   margin-bottom: 2.7rem;
   color: var(--lib-gold);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Oswald, "Arial Narrow", sans-serif;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .module-card h3 {
@@ -264,7 +333,7 @@ main.content {
   width: 100%;
   max-width: none;
   padding-inline: max(1rem, calc((100% - 1160px) / 2));
-  background: var(--lib-cream);
+  background: var(--lib-slate-pale);
 }
 
 .feature-grid,
@@ -293,9 +362,9 @@ main.content {
   align-items: center;
   margin-block: clamp(4rem, 8vw, 7rem);
   padding: clamp(2rem, 5vw, 4rem);
-  background: var(--lib-green-dark);
+  background: var(--lib-navy);
   border-radius: 0.8rem;
-  color: #f4f8f6;
+  color: #ffffff;
 }
 
 .support-panel h2 {
@@ -309,9 +378,8 @@ main.content {
 .page-lead {
   max-width: 820px;
   margin: 0 0 3rem;
-  color: #40534f;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  color: var(--lib-muted);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   line-height: 1.55;
 }
 
@@ -326,9 +394,9 @@ main.content {
   margin-block: 2.5rem 1rem;
   padding: 2rem;
   background:
-    linear-gradient(rgba(255, 253, 250, 0.88), rgba(255, 253, 250, 0.88)),
-    repeating-linear-gradient(135deg, #dfeae7 0, #dfeae7 1px, transparent 1px, transparent 18px);
-  border: 2px dashed #9abbb5;
+    linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+    repeating-linear-gradient(135deg, #dde0ed 0, #dde0ed 1px, transparent 1px, transparent 18px);
+  border: 2px dashed var(--lib-slate);
   border-radius: 0.8rem;
   text-align: center;
 }
@@ -348,7 +416,7 @@ main.content {
   height: 3.5rem;
   margin-inline: auto;
   padding-left: 0.2rem;
-  background: var(--lib-green);
+  background: var(--lib-navy);
   border-radius: 50%;
   color: white;
 }
@@ -373,8 +441,8 @@ main.content {
 
 .module-note {
   padding: 1rem 1.25rem;
-  background: var(--lib-green-soft);
-  border-left: 4px solid var(--lib-green);
+  background: var(--lib-slate-light);
+  border-left: 4px solid var(--lib-navy);
 }
 
 .module-note p {
@@ -429,8 +497,8 @@ main.content {
 
 .nav-footer {
   padding-block: 2rem;
-  background: #edf3f1;
-  color: #43534f;
+  background: var(--lib-slate-pale);
+  color: var(--lib-muted);
 }
 
 @media (max-width: 820px) {

@@ -4,6 +4,12 @@ project:
   render:
     - "*.qmd"
     - "modules/*.qmd"
+  # Only the web-ready derivatives ship. The print-resolution logo masters and
+  # the source TTF collections stay out of _site and out of the deployment.
+  resources:
+    - "assets/fonts/web/*.woff2"
+    - "assets/logo/smu-libraries-nav.png"
+    - "assets/logo/smu-libraries-footer.png"
 
 lang: en
 
@@ -16,6 +22,8 @@ website:
   back-to-top-navigation: true
   navbar:
     title: "LIB002"
+    logo: assets/logo/smu-libraries-nav.png
+    logo-alt: "SMU Libraries"
     left:
       - text: "Explore modules"
         menu:

@@ -9,3 +9,19 @@ Thumbs.db
 *~
 
 **/*.quarto_ipynb
+
+# Brand source material. Only the web-ready derivatives belong in the
+# repository: assets/logo/smu-libraries-{nav,footer}.png and
+# assets/fonts/web/*.woff2. The originals are print-resolution logo masters
+# (240 megapixels each) and the full TTF families they were built from —
+# together about 10 MB of binaries that Git cannot diff. Keep them in the
+# Library's own asset store, not here.
+assets/logo/*-rgb-logo.png
+assets/fonts/*.zip
+assets/fonts/Libre_Franklin/
+assets/fonts/OpenSans Collection/
+assets/fonts/Oswald Collection/
+__MACOSX/
+
+# Packaged Claude skill, unrelated to the website build.
+*.skill
