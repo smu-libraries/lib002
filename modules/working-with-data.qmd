@@ -9,16 +9,111 @@ description-meta: "Key considerations and SMU Libraries resources for finding, u
 What to consider when sourcing data for research, and which Library resources can help you locate and interpret it.
 :::
 
-::: {.h5p-placeholder}
-<div class="h5p-placeholder__icon" aria-hidden="true">▶</div>
+::: {.module-contents}
+## In this module
 
-## Interactive book placeholder
+Five interactive books, following data through a project from collection to analysis. You can still open any of them on its own.
 
-The H5P Interactive Book for this module will be embedded here. A direct link will also be provided for opening it in a separate window.
+1. [Collecting Primary Data](#collecting-primary-data)
+2. [Secondary Data Collection](#secondary-data-collection)
+3. [Data Pre-processing and Cleaning](#data-pre-processing-and-cleaning)
+4. [Quantitative Data Analysis](#quantitative-data-analysis)
+5. [Qualitative Data Analysis](#qualitative-data-analysis)
 :::
 
+<!-- Loaded before the iframes on purpose. The resizer runs immediately and
+     pokes contentWindow on every h5p iframe it can already see, which forces
+     lazy ones to load. Placed first it sees none, and instead picks each book
+     up from the "hello" the iframe posts when it actually loads. -->
+<script src="https://smu.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+
+<p class="book-label">Book 1 of 5</p>
+
+## Collecting Primary Data
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292627991821179369/embed"
+  title="Interactive book: Collecting Primary Data"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
 ::: {.module-note}
-**Having trouble with an embedded book?** The published module will always include a clearly labelled fallback link beneath the book.
+If this interactive book does not load, [open Collecting Primary Data in a new window](https://smu.h5p.com/content/1292627991821179369){target="_blank" rel="noopener"}.
+:::
+
+<p class="book-label">Book 2 of 5</p>
+
+## Secondary Data Collection
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292627801069189059/embed"
+  title="Interactive book: Secondary Data Collection"
+  loading="lazy"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
+::: {.module-note}
+If this interactive book does not load, [open Secondary Data Collection in a new window](https://smu.h5p.com/content/1292627801069189059){target="_blank" rel="noopener"}.
+:::
+
+<p class="book-label">Book 3 of 5</p>
+
+## Data Pre-processing and Cleaning
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292618555638406399/embed"
+  title="Interactive book: Data Pre-processing and Cleaning"
+  loading="lazy"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
+::: {.module-note}
+If this interactive book does not load, [open Data Pre-processing and Cleaning in a new window](https://smu.h5p.com/content/1292618555638406399){target="_blank" rel="noopener"}.
+:::
+
+<p class="book-label">Book 4 of 5</p>
+
+## Quantitative Data Analysis
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292748111846563029/embed"
+  title="Interactive book: Quantitative Data Analysis"
+  loading="lazy"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
+::: {.module-note}
+If this interactive book does not load, [open Quantitative Data Analysis in a new window](https://smu.h5p.com/content/1292748111846563029){target="_blank" rel="noopener"}.
+:::
+
+<p class="book-label">Book 5 of 5</p>
+
+## Qualitative Data Analysis
+
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292618582161213719/embed"
+  title="Interactive book: Qualitative Data Analysis"
+  loading="lazy"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
+
+::: {.module-note}
+If this interactive book does not load, [open Qualitative Data Analysis in a new window](https://smu.h5p.com/content/1292618582161213719){target="_blank" rel="noopener"}.
 :::
 
 ::: {.module-navigation}
