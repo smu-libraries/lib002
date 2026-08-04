@@ -43,8 +43,9 @@ website:
         href: about.qmd
   page-footer:
     border: false
-    left: "LIB002: Graduate Research Essentials"
-    center: "Developed by SMU Libraries"
+    # The back-to-top button is fixed to the bottom centre of the viewport, so
+    # the centre slot is left empty; anything placed there gets covered.
+    left: "LIB002: Graduate Research Essentials — developed by SMU Libraries"
     right:
       - text: "Support"
         href: support.qmd

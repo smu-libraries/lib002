@@ -138,13 +138,13 @@ h2 {
   letter-spacing: 0.04em;
 }
 
-// Quarto caps navbar logos at 24px, which is too small for a lockup that
-// carries the word "Libraries" alongside the crest.
+// Quarto caps navbar logos at 24px, which leaves a lockup carrying the word
+// "Libraries" stranded in a navbar whose content box is about 51px tall.
 .navbar-brand img {
-  height: 1.95rem;
+  height: 2.7rem;
   max-height: none;
   width: auto;
-  margin-right: 0.75rem;
+  margin-right: 0.85rem;
 }
 
 .navbar-nav .nav-link {
@@ -495,8 +495,11 @@ main.content {
   margin: 0.3rem;
 }
 
+// The back-to-top button floats over the footer's centre column, which is why
+// that column is left empty in _quarto.yml. The extra bottom padding keeps the
+// button clear of the text rather than sitting flush against it.
 .nav-footer {
-  padding-block: 2rem;
+  padding-block: 2rem 3.5rem;
   background: var(--lib-slate-pale);
   color: var(--lib-muted);
 }
