@@ -1,12 +1,12 @@
 ---
 title: "Working with Data"
-description: "Explore considerations and Library resources for finding and working with research data."
+description-meta: "Key considerations and SMU Libraries resources for finding, understanding and working with research data."
 ---
 
 <p class="module-label">Module 3 of 5</p>
 
 ::: {.page-lead}
-Explore key considerations and Library resources that can help you find, understand and work with data in your research.
+What to consider when sourcing data for research, and which Library resources can help you locate and interpret it.
 :::
 
 ::: {.h5p-placeholder}

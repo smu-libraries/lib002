@@ -1,24 +1,27 @@
 ---
 title: "Introduction to Library Services"
-description: "Discover SMU Library services, collections and expertise for postgraduate research."
+description-meta: "An introduction to the collections, services and specialist support SMU Libraries provides for postgraduate researchers and research staff."
 ---
 
 <p class="module-label">Module 1 of 5</p>
 
 ::: {.page-lead}
-Discover the services, collections and expertise available through SMU Libraries, and learn where to turn as your research develops.
+Get your bearings in the Library: what is available to you as a postgraduate researcher, and who to approach as your work develops.
 :::
 
-::: {.h5p-placeholder}
-<div class="h5p-placeholder__icon" aria-hidden="true">▶</div>
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292533645694677109/embed"
+  title="Interactive book: Introduction to Library Services"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
 
-## Interactive book placeholder
-
-The H5P Interactive Book for this module will be embedded here. A direct link will also be provided for opening it in a separate window.
-:::
+<script src="https://smu.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 
 ::: {.module-note}
-**Having trouble with an embedded book?** The published module will always include a clearly labelled fallback link beneath the book.
+If the interactive book does not load, [open Introduction to Library Services in a new window](https://smu.h5p.com/content/1292533645694677109){target="_blank" rel="noopener"}.
 :::
 
 ::: {.module-navigation}

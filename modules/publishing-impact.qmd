@@ -1,12 +1,12 @@
 ---
 title: "Publishing and Research Impact"
-description: "Navigate publishing choices and explore research visibility and impact."
+description-meta: "Scholarly publishing choices, and ways to understand and strengthen the visibility and impact of research."
 ---
 
 <p class="module-label">Module 5 of 5</p>
 
 ::: {.page-lead}
-Navigate scholarly publishing choices and explore ways to understand and strengthen the visibility and impact of your research.
+How publishing decisions are approached, and what visibility and impact measures can and cannot tell you about research.
 :::
 
 ::: {.h5p-placeholder}

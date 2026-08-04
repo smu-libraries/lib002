@@ -1,8 +1,7 @@
 ---
-title: "Page not found"
-description: "The requested LIB002 page could not be found."
+pagetitle: "Page not found"
+description-meta: "The requested LIB002 page could not be found."
 page-layout: full
-title-block-style: none
 ---
 
 ::: {.not-found}

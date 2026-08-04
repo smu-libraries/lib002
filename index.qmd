@@ -49,7 +49,7 @@ The modules complement one another, but there is no required order. Choose the t
 
 ### Introduction to Library Services
 
-Discover the services, collections and expertise available to support your research at SMU.
+The collections, services and people available to you, and how to reach them.
 
 [Explore Introduction to Library Services](modules/library-services.qmd){.module-card__link}
 :::
@@ -59,7 +59,7 @@ Discover the services, collections and expertise available to support your resea
 
 ### Literature Review and Reference Management
 
-Find, evaluate and organise scholarly literature, and manage references more effectively.
+Searching systematically, judging what you find, and keeping your references in order.
 
 [Explore Literature Review and Reference Management](modules/literature-review.qmd){.module-card__link}
 :::
@@ -69,7 +69,7 @@ Find, evaluate and organise scholarly literature, and manage references more eff
 
 ### Working with Data
 
-Explore considerations and Library resources for finding, understanding and working with data.
+Where to look for data, and what to check before you rely on it.
 
 [Explore Working with Data](modules/working-with-data.qmd){.module-card__link}
 :::
@@ -79,7 +79,7 @@ Explore considerations and Library resources for finding, understanding and work
 
 ### Research Data Management
 
-Plan how research data will be organised, documented, stored, shared and preserved.
+Decisions about your data that are much easier made early than fixed later.
 
 [Explore Research Data Management](modules/research-data-management.qmd){.module-card__link}
 :::
@@ -89,7 +89,7 @@ Plan how research data will be organised, documented, stored, shared and preserv
 
 ### Publishing and Research Impact
 
-Navigate publishing choices and learn how research visibility and impact can be understood.
+Choosing where to publish, and making sense of what impact measures actually show.
 
 [Explore Publishing and Research Impact](modules/publishing-impact.qmd){.module-card__link}
 :::

@@ -1,12 +1,12 @@
 ---
 title: "Research Data Management"
-description: "Plan how research data will be organised, documented, stored, shared and preserved."
+description-meta: "How research data can be organised, documented, stored, shared and preserved during a project and after it ends."
 ---
 
 <p class="module-label">Module 4 of 5</p>
 
 ::: {.page-lead}
-Consider how your research data will be organised, documented, stored, shared and preserved throughout and beyond your project.
+The practical choices behind a data management plan, and why they are easier to settle at the start of a project.
 :::
 
 ::: {.h5p-placeholder}

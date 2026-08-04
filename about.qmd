@@ -1,6 +1,6 @@
 ---
 title: "About LIB002"
-description: "Learn about the purpose and scope of LIB002: Graduate Research Essentials."
+description-meta: "The purpose, scope and accessibility of LIB002: Graduate Research Essentials, a self-paced learning resource from SMU Libraries."
 ---
 
 ::: {.page-lead}

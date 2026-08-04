@@ -1,12 +1,12 @@
 ---
 title: "Literature Review and Reference Management"
-description: "Explore approaches and tools for finding literature and managing references."
+description-meta: "Approaches and tools for finding, evaluating and organising scholarly literature, and for managing references across a research project."
 ---
 
 <p class="module-label">Module 2 of 5</p>
 
 ::: {.page-lead}
-Develop a more confident approach to discovering, evaluating and organising scholarly literature and managing the references you use.
+How to build a literature search you can account for, and habits that keep references manageable as a project grows.
 :::
 
 ::: {.h5p-placeholder}

@@ -1,6 +1,6 @@
 ---
 title: "Library support"
-description: "Find further help from SMU Libraries for your research."
+description-meta: "How to get further help from SMU Libraries: asking a question, arranging research support, and using Library services."
 ---
 
 ::: {.page-lead}
