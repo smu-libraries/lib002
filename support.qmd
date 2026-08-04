@@ -13,7 +13,7 @@ The modules provide a starting point. When you need help applying the guidance t
 
 Contact the Library for help locating resources, using research tools, or identifying the most appropriate next step.
 
-**Contact link to be confirmed**
+[library@smu.edu.sg](mailto:library@smu.edu.sg)
 :::
 
 ::: {.support-option}
@@ -21,7 +21,7 @@ Contact the Library for help locating resources, using research tools, or identi
 
 Connect with Library specialists for more focused guidance related to your topic, discipline or stage of research.
 
-**Consultation link to be confirmed**
+[rds@smu.edu.sg](mailto:rds@smu.edu.sg)
 :::
 
 ::: {.support-option}
@@ -29,12 +29,8 @@ Connect with Library specialists for more focused guidance related to your topic
 
 Visit the SMU Libraries website for databases, collections, facilities and current service information.
 
-**Library website link to be confirmed**
+[library.smu.edu.sg](https://library.smu.edu.sg)
 :::
-:::
-
-::: {.callout-important title="Before this site is published"}
-Replace the three placeholder lines above with the official contact, consultation and Library website links.
 :::
 
 [Return to all modules](index.qmd#modules){.btn .btn-outline-primary}
