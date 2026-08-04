@@ -1,8 +1,7 @@
 ---
-title: "LIB002: Graduate Research Essentials"
+pagetitle: "LIB002: Graduate Research Essentials"
 description: "Explore essential research skills, tools, resources and Library support across the research lifecycle."
 page-layout: full
-title-block-style: none
 ---
 
 :::: {.lib-hero}
@@ -21,7 +20,7 @@ Build confidence with the skills, tools and Library support that can help you th
 
 Postgraduate researchers and research staff at any stage of their work.
 
-<hr>
+<hr />
 
 <p class="hero-note__label">Learn your way</p>
 
