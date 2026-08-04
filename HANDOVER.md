@@ -1,123 +1,61 @@
 # LIB002 website handover
 
-Last updated: 3 August 2026 (Asia/Singapore)
+Last updated: 4 August 2026 (Asia/Singapore)
 
 ## Current state
 
-The initial Quarto website skeleton has been created on the working branch `codex/quarto-skeleton`. Check the latest Git status and remote branch state before making further changes.
+Working branch: `codex/quarto-skeleton`. Check `git status` and the remote before making changes.
 
-The repository now contains:
+The site renders cleanly (9/9 pages, no Quarto warnings) and all five modules now carry their real H5P books.
 
-- global Quarto configuration and navigation in `_quarto.yml`;
-- a designed homepage in `index.qmd`;
-- five directly linkable module pages under `modules/`;
-- supporting About, Library Support and custom 404 pages;
-- a responsive SCSS visual system in `assets/styles.scss`;
-- a GitHub Pages deployment workflow in `.github/workflows/publish.yml`;
-- beginner-facing setup notes in `README.md`;
-- repository-wide coding-agent guidance in `AGENTS.md`;
-- a short `CLAUDE.md` pointer to avoid duplicated agent instructions;
-- placeholder directories for approved images and shared includes.
+### Books embedded
 
-The first module uses the descriptive path:
+| Module | Page | Books |
+|---|---|---|
+| 1 | `modules/library-services.qmd` | 1 |
+| 2 | `modules/literature-review.qmd` | 3 |
+| 3 | `modules/working-with-data.qmd` | 5 |
+| 4 | `modules/research-data-management.qmd` | 1 |
+| 5 | `modules/publishing-impact.qmd` | 1 |
 
-`modules/library-services.qmd`
+Eleven books, eleven fallback links. Every embed URL was checked for framing headers before use. See `AGENTS.md` for the multi-book page contract and the rule about where the H5P resizer script must go.
 
-Its displayed title is **Introduction to Library Services**.
+### Brand
 
-## Decisions already made
+Colours, typography and the logo follow the SMU identity. SMU Blue `#141C52`, SMU Gold `#8A704C`, Slate Blue `#C5CADF`, Light Slate `#DDE0ED`, white background, black body text. Secondary text uses a tint of SMU Blue rather than a new hue.
 
-- The site is a Quarto static website, with no R, Python, Node.js or application framework dependency.
-- H5P books remain externally hosted. Each module page will contain an iframe plus a visible fallback link.
-- Visitors may enter the modules in any order. Previous/next links are conveniences, not prescribed progression.
-- GitHub Actions will render `_site/` and publish it using GitHub Pages artifacts. A local `gh-pages` branch bootstrap is not required.
-- `AGENTS.md` is the authoritative guide for future coding agents.
-- Presentation files live under `assets/`; learning and orientation content remains in `.qmd` files.
+Typefaces follow SMU's guidance for digital applications: Oswald for headings, Open Sans for body. Both are self-hosted as subset WOFF2 in `assets/fonts/web/`. The Bootswatch theme's Google Fonts import is disabled, so the site makes no third-party requests other than the H5P embeds themselves.
 
-## Checks completed
+Logo derivatives live in `assets/logo/`. The print masters they came from are gitignored; keep them in the Library's own asset store.
 
-- All Markdown links to local `.qmd` pages resolve to real files.
-- `git diff --check` passed.
-- The SCSS file has balanced opening and closing braces.
-- The GitHub Pages workflow follows the current Quarto/GitHub static-site deployment pattern.
-- The repository has intentional, clearly labelled placeholders for H5P embeds and final institutional links.
+## Not yet done
 
-## Not yet completed
+### Needs a decision or an answer from the project owner
 
-### 1. Install and verify Quarto locally
+- **Institutional details.** The About page no longer carries a placeholder box asking for them, but the ownership statement, a named accessibility contact and a review date are still not on the site.
+- **Custom domain.** `_quarto.yml` sets `site-url` to `https://smu-libraries.github.io/lib002/`. Change it if a custom domain is adopted.
+- **Analytics.** None configured. Nothing is currently tracked.
+- **Homepage design.** The hero uses two side-by-side calls to action, a floating shadowed card and a gold accent rule. These read as a product landing page rather than a Library resource and are the main outstanding design question.
+- **Book title spelling.** Module 2 book 3 is "Organizing Your References" (American -z) against British spelling elsewhere on the site. Module 3 book 3 is "Data Pre-processing & Cleaning" in H5P but "and" on the site. Align whichever way is preferred.
 
-Quarto was not installed or available on the command path of the company computer. Install the current stable Quarto CLI on the home computer; no optional R, Python or Node.js setup is needed for this project.
+### Needs doing
 
-After installation, restart the terminal/Codex app if necessary and run:
+- **Font licences.** Oswald and Open Sans are SIL Open Font License. The licence text must accompany redistribution, and serving the WOFF2 files publicly counts. The SMU font packs did not include `OFL.txt`. Add the licence files to `assets/fonts/web/`.
+- **Module 3 load check.** Five H5P runtimes on one page is the heaviest thing on the site, roughly 97 requests per book. Try it on a mid-range phone. If it drags, switch that page from stacked books to loading each on demand; `AGENTS.md` records the threshold.
+- **Lazy-loading check.** Books after the first are marked `loading="lazy"`. This could not be verified in the preview browser, which reports `visibilityState: hidden` and never evaluates viewport intersection, so every frame loads regardless. Confirm in a real window with the network panel open.
 
-```powershell
-quarto --version
-```
+## Running the site
 
-### 2. Render the site
-
-From the repository root (`lib002/`), run:
-
-```powershell
-quarto render
-```
-
-Fix any Quarto, YAML, Markdown or SCSS errors before continuing. This is the first task for the next session because render-level validation has not yet been possible.
-
-Then preview locally:
+Quarto is installed and on the system PATH. From the repository root:
 
 ```powershell
 quarto preview
 ```
 
-Inspect at least:
+Starts a local server that reloads on save. `Ctrl + C` to stop. Use `quarto render` only to produce `_site/` for inspection; a running preview holds `_site` and will make a concurrent render fail. If a build behaves strangely, delete `_site` and `.quarto` and try again — both are generated and gitignored.
 
-- the homepage at desktop and narrow mobile widths;
-- one representative module page;
-- the Explore modules dropdown;
-- the About, Support and 404 pages;
-- keyboard focus states and 200% browser zoom.
+## Publishing
 
-### 3. Review draft wording and visual direction
+`.github/workflows/publish.yml` renders and deploys on every push to `main`, and can be run manually from the Actions tab. GitHub Pages must be set to build from GitHub Actions under **Settings → Pages → Build and deployment → Source**.
 
-The current summaries are sensible drafts based on the project brief, not approved final copy. Review the homepage hierarchy, module card descriptions, page introductions, colours, typography and spacing before adding the H5P books.
-
-### 4. Add final information
-
-Still needed from the project owner:
-
-- five H5P embed URLs and five public fallback URLs;
-- confirmed module summaries if the current drafts need changing;
-- official SMU Libraries contact, consultation and website links;
-- any required logo, brand colours, footer wording, privacy notice or accessibility statement;
-- confirmation of the final public domain;
-- analytics requirements, if any.
-
-Search for `placeholder` and `to be confirmed` before launch.
-
-### 5. Configure and publish GitHub Pages
-
-After local review and an intentional commit/push, set the GitHub repository to:
-
-**Settings → Pages → Build and deployment → Source → GitHub Actions**
-
-The current project URL configured in `_quarto.yml` is:
-
-`https://smu-libraries.github.io/lib002/`
-
-Change `website.site-url` if an SMU custom domain will be used.
-
-## Suggested prompt for the next Codex session
-
-> Read `HANDOVER.md`, `AGENTS.md`, `README.md` and `_quarto.yml` completely. Continue the LIB002 Quarto website from the documented handover. First check whether Quarto is installed, run `quarto render`, fix any build errors, then preview and visually inspect the homepage and one module page. Do not add H5P URLs or invent institutional contact details unless I provide them.
-
-## Continuing on another computer
-
-The intended remote branch is `origin/codex/quarto-skeleton`. After the push has been confirmed, fetch and switch to it on the home computer:
-
-```powershell
-git fetch origin
-git switch --track origin/codex/quarto-skeleton
-```
-
-If a local branch with that name already exists, use `git switch codex/quarto-skeleton` instead. Confirm the successful push in the originating Codex session before relying on the remote branch.
+The public URL is determined by the organisation and repository name, so it is `https://smu-libraries.github.io/lib002/` unless the repository is renamed or a custom domain is configured.

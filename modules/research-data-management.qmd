@@ -9,16 +9,19 @@ description-meta: "How research data can be organised, documented, stored, share
 The practical choices behind a data management plan, and why they are easier to settle at the start of a project.
 :::
 
-::: {.h5p-placeholder}
-<div class="h5p-placeholder__icon" aria-hidden="true">▶</div>
+<script src="https://smu.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 
-## Interactive book placeholder
-
-The H5P Interactive Book for this module will be embedded here. A direct link will also be provided for opening it in a separate window.
-:::
+<div class="h5p-frame">
+<iframe
+  src="https://smu.h5p.com/content/1292622038312205809/embed"
+  title="Interactive book: Research Data Management"
+  allow="fullscreen"
+  allowfullscreen>
+</iframe>
+</div>
 
 ::: {.module-note}
-**Having trouble with an embedded book?** The published module will always include a clearly labelled fallback link beneath the book.
+If this interactive book does not load, [open Research Data Management in a new window](https://smu.h5p.com/content/1292622038312205809){target="_blank" rel="noopener"}.
 :::
 
 ::: {.module-navigation}

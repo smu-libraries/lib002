@@ -26,7 +26,3 @@ LIB002 is intended as an accessible starting point and reference resource. It do
 ## Accessibility
 
 We aim to make LIB002 clear, usable and accessible across devices and ways of navigating. If you encounter an accessibility barrier, please [contact the Library](support.qmd) so that we can help and improve the resource.
-
-::: {.callout-note title="Content details to confirm before launch"}
-Add the appropriate institutional ownership statement, accessibility contact route, and review date once these have been confirmed.
-:::
