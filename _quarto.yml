@@ -8,6 +8,10 @@ project:
   # the source TTF collections stay out of _site and out of the deployment.
   resources:
     - "assets/fonts/web/*.woff2"
+    # Oswald and Open Sans are SIL Open Font License. Serving the WOFF2 files
+    # publicly is distribution, and the licence requires its text to travel
+    # with them, so it ships alongside rather than only living in the repo.
+    - "assets/fonts/web/OFL-*.txt"
     - "assets/logo/smu-libraries-nav.png"
     - "assets/logo/smu-libraries-footer.png"
 
