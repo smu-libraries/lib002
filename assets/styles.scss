@@ -90,6 +90,17 @@ html {
   scroll-padding-top: 5.5rem;
 }
 
+// The hero band bleeds to the viewport edges with calc(50% - 50vw), but 100vw
+// counts the scrollbar while the visible area does not, so it overshoots by
+// half a scrollbar and raises a horizontal scrollbar of its own. Clipping has
+// to happen here rather than on html: overflow on the root propagates to the
+// viewport and stops applying to the element. This container is exactly
+// clientWidth, so the overshoot is trimmed without the band losing the edges.
+// clip, not hidden, so it never becomes a scroll container.
+.quarto-container {
+  overflow-x: clip;
+}
+
 body {
   line-height: 1.7;
   text-rendering: optimizeLegibility;
@@ -203,37 +214,38 @@ main.content:has(.page-lead) {
 // Visitors arrive already wanting the modules, so the hero orients and gets
 // out of the way rather than making a case for itself.
 .lib-hero {
-  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
+  position: relative;
+  padding-block: clamp(2.25rem, 4.5vw, 3.5rem);
 }
 
+// The band used to be a fixed 420px tall and positioned against the page
+// rather than the hero, so it had no idea how tall its contents were. Once the
+// hero was shortened the text ended up 18px from its lower edge. It is now
+// sized by the hero's own box — full bleed across the viewport, but taking the
+// hero's block padding as breathing room however the heading wraps.
 .lib-hero::before {
   position: absolute;
   z-index: -1;
-  top: 4rem;
-  right: 0;
-  left: 0;
-  height: 420px;
+  inset: 0 calc(50% - 50vw);
   background:
     radial-gradient(circle at 82% 20%, rgba(138, 112, 76, 0.1), transparent 22rem),
     linear-gradient(135deg, #ebecf4 0%, #ffffff 56%, #e2e4ef 100%);
   content: "";
 }
 
-// On the homepage the title block is the hero heading rather than a separate
-// band above it — see the note in index.qmd for why the heading cannot simply
-// live inside .lib-hero. Only the homepage is touched; every other page uses
-// its title block in the ordinary way.
-main.content:has(.lib-hero) .quarto-title-block {
-  margin-bottom: 0;
-  padding-top: clamp(2rem, 4vw, 3.5rem);
+.lib-hero h1 {
+  max-width: 850px;
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
 }
 
-main.content:has(.lib-hero) .quarto-title-block h1.title {
-  max-width: 850px;
-  margin: 0;
-  color: var(--lib-navy);
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
-  line-height: 1.08;
+// The homepage keeps its heading inside .lib-hero so the tinted band can be
+// sized by its contents. front matter still carries a title, both to stop
+// Quarto promoting the heading out of the hero and to feed the browser tab,
+// so the title block it generates is hidden here. display:none also takes it
+// out of the accessibility tree, leaving one h1 for a screen reader.
+main.content:has(.lib-hero) .quarto-title-block {
+  display: none;
 }
 
 .lib-hero p {
@@ -268,6 +280,14 @@ main.content:has(.lib-hero) .quarto-title-block h1.title {
 .content-band > h2 {
   margin-bottom: 1.25rem;
   font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+// A band's own padding is the spacing; a heading arriving with its own margin
+// on top of that just doubles the gap. Quarto wraps headings in sections, so
+// this has to reach through one level.
+.content-band > :first-child,
+.content-band > section:first-child > h2:first-child {
+  margin-top: 0;
 }
 
 .module-grid {
