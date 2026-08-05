@@ -464,10 +464,19 @@ main.content {
   color: white;
 }
 
+// Prose reads best at a narrow measure, but an Interactive Book does not: H5P
+// specifies 1088px for the embed, and below that the book's fixed-width
+// contents sidebar eats into its own reading pane. So the text column stays
+// where it is and only the book breaks out of it, pulled out symmetrically by
+// negative inline margins. The max(100%, ...) floor stops it ever ending up
+// narrower than the column it sits in on small screens.
 .h5p-frame {
-  width: 100%;
+  --h5p-width: max(100%, min(1088px, calc(100vw - 3rem)));
+
+  width: var(--h5p-width);
   min-height: 720px;
   margin-top: 2.5rem;
+  margin-inline: calc((100% - var(--h5p-width)) / 2);
   overflow: hidden;
   background: white;
   border: 1px solid var(--lib-border);
