@@ -167,6 +167,19 @@ main.content {
   padding-bottom: 5rem;
 }
 
+// Every page carrying a lead paragraph — the five modules, About and Support —
+// shares one content width, matched to the bands on the homepage so the site
+// lines up edge to edge. Everything inside sits at this width, including the
+// H5P books, so nothing has to break out of the column.
+//
+// The homepage is excluded deliberately rather than by accident: it has no
+// .page-lead, its bands set their own width, and its soft band is meant to run
+// full bleed. The 404 page likewise constrains itself through .not-found.
+main.content:has(.page-lead) {
+  width: min(1160px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
 .lib-hero,
 .content-band,
 .support-panel,
@@ -464,19 +477,10 @@ main.content {
   color: white;
 }
 
-// Prose reads best at a narrow measure, but an Interactive Book does not: H5P
-// specifies 1088px for the embed, and below that the book's fixed-width
-// contents sidebar eats into its own reading pane. So the text column stays
-// where it is and only the book breaks out of it, pulled out symmetrically by
-// negative inline margins. The max(100%, ...) floor stops it ever ending up
-// narrower than the column it sits in on small screens.
 .h5p-frame {
-  --h5p-width: max(100%, min(1088px, calc(100vw - 3rem)));
-
-  width: var(--h5p-width);
+  width: 100%;
   min-height: 720px;
   margin-top: 2.5rem;
-  margin-inline: calc((100% - var(--h5p-width)) / 2);
   overflow: hidden;
   background: white;
   border: 1px solid var(--lib-border);
@@ -588,10 +592,14 @@ main.content {
 }
 
 @media (max-width: 520px) {
+  // Narrow screens can spare less to the gutter, so the whole site tightens up
+  // together rather than leaving the module pages with wider margins than the
+  // homepage.
   .lib-hero,
   .content-band,
   .support-panel,
-  .not-found {
+  .not-found,
+  main.content:has(.page-lead) {
     width: min(100% - 1.25rem, 1160px);
   }
 

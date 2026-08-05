@@ -57,6 +57,11 @@ format:
     theme:
       - cosmo
       - assets/styles.scss
+    # The article grid caps content at 799px and reserves 272px margin columns
+    # this site does not use, which left the H5P books narrower than the width
+    # H5P specifies for them. Full layout removes that cap; the shared content
+    # width is then set in assets/styles.scss so every page lines up.
+    page-layout: full
     toc: false
     anchor-sections: true
     link-external-icon: true
