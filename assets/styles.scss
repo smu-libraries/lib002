@@ -188,13 +188,16 @@ main.content:has(.page-lead) {
   margin-inline: auto;
 }
 
+// The hero used to run 610px tall with a display heading that wrapped to three
+// lines, which pushed the first module card two full screens down the page.
+// Visitors arrive already wanting the modules, so the hero orients and gets
+// out of the way rather than making a case for itself.
 .lib-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.65fr) minmax(260px, 0.7fr);
-  gap: clamp(2rem, 7vw, 6rem);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
-  min-height: 610px;
-  padding-block: clamp(4rem, 10vw, 8rem);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .lib-hero::before {
@@ -203,17 +206,28 @@ main.content:has(.page-lead) {
   top: 4rem;
   right: 0;
   left: 0;
-  height: 610px;
+  height: 420px;
   background:
     radial-gradient(circle at 82% 20%, rgba(138, 112, 76, 0.1), transparent 22rem),
     linear-gradient(135deg, #ebecf4 0%, #ffffff 56%, #e2e4ef 100%);
   content: "";
 }
 
-.lib-hero h1 {
+// On the homepage the title block is the hero heading rather than a separate
+// band above it — see the note in index.qmd for why the heading cannot simply
+// live inside .lib-hero. Only the homepage is touched; every other page uses
+// its title block in the ordinary way.
+main.content:has(.lib-hero) .quarto-title-block {
+  margin-bottom: 0;
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+main.content:has(.lib-hero) .quarto-title-block h1.title {
   max-width: 850px;
-  margin: 0 0 1.5rem;
-  font-size: clamp(3rem, 7vw, 5.8rem);
+  margin: 0;
+  color: var(--lib-navy);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.08;
 }
 
 .lib-hero__content > p:not(.eyebrow) {
@@ -253,8 +267,11 @@ main.content:has(.page-lead) {
   text-transform: uppercase;
 }
 
+// 115px of padding at each end put roughly 230px of air between every band.
+// Generous spacing suits dense content; this page is sparse, so at that scale
+// it read as emptiness rather than composure.
 .content-band {
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
 }
 
 .content-band > h2,
@@ -265,24 +282,6 @@ main.content:has(.page-lead) {
 .content-band > h2 {
   margin-bottom: 1.25rem;
   font-size: clamp(2rem, 4vw, 3.2rem);
-}
-
-.content-band--intro {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
-  column-gap: clamp(2rem, 8vw, 7rem);
-  align-items: start;
-  border-top: 1px solid var(--lib-border);
-  border-bottom: 1px solid var(--lib-border);
-}
-
-.content-band--intro h2 {
-  margin-top: 0;
-}
-
-.content-band--intro p {
-  grid-column: 2;
-  font-size: 1.12rem;
 }
 
 .module-grid {
@@ -349,7 +348,9 @@ main.content:has(.page-lead) {
   background: var(--lib-slate-pale);
 }
 
-.feature-grid,
+// Only the Support page uses this three-column grid now. The homepage's "how
+// to use" panel was the same shape, but three feature tiles for what amounts
+// to two sentences was the padding this page could most afford to lose.
 .support-options {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -357,13 +358,11 @@ main.content:has(.page-lead) {
   margin-top: 2.5rem;
 }
 
-.feature-item,
 .support-option {
   padding-top: 1.25rem;
   border-top: 3px solid var(--lib-gold);
 }
 
-.feature-item h3,
 .support-option h3 {
   font-size: 1.35rem;
 }
@@ -570,16 +569,10 @@ main.content:has(.page-lead) {
     height: 850px;
   }
 
-  .content-band--intro,
   .module-grid,
-  .feature-grid,
   .support-options,
   .support-panel {
     grid-template-columns: 1fr;
-  }
-
-  .content-band--intro p {
-    grid-column: 1;
   }
 
   .module-card:first-child {
