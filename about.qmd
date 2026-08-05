@@ -26,3 +26,9 @@ LIB002 is intended as an accessible starting point and reference resource. It do
 ## Accessibility
 
 We aim to make LIB002 clear, usable and accessible across devices and ways of navigating. If you encounter an accessibility barrier, please [contact the Library](support.qmd) so that we can help and improve the resource.
+
+## Maintaining this resource
+
+LIB002 is developed and maintained by SMU Libraries.
+
+Last reviewed: August 2026.
