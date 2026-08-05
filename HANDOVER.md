@@ -1,14 +1,12 @@
 # LIB002 website handover
 
-Last updated: 4 August 2026 (Asia/Singapore)
+Last updated: 5 August 2026 (Asia/Singapore)
 
-## Current state
+The site is live at <https://smu-libraries.github.io/lib002/> and is in a finished state. Everything the earlier handover listed as outstanding has been dealt with. What follows is orientation for whoever picks it up next, not a to-do list.
 
-Working branch: `codex/quarto-skeleton`. Check `git status` and the remote before making changes.
+## What the site is
 
-The site renders cleanly (9/9 pages, no Quarto warnings) and all five modules now carry their real H5P books.
-
-### Books embedded
+Five module pages fronting eleven H5P Interactive Books, plus a homepage, About, Support and a 404. Quarto builds it; GitHub Actions deploys it on every push to `main`.
 
 | Module | Page | Books |
 |---|---|---|
@@ -18,44 +16,39 @@ The site renders cleanly (9/9 pages, no Quarto warnings) and all five modules no
 | 4 | `modules/research-data-management.qmd` | 1 |
 | 5 | `modules/publishing-impact.qmd` | 1 |
 
-Eleven books, eleven fallback links. Every embed URL was checked for framing headers before use. See `AGENTS.md` for the multi-book page contract and the rule about where the H5P resizer script must go.
+Eleven books, eleven fallback links. Read `AGENTS.md` before changing a module page: it carries the page contract, the multi-book pattern and the rule about where the H5P resizer script goes and why.
 
-### Brand
+## Brand
 
-Colours, typography and the logo follow the SMU identity. SMU Blue `#141C52`, SMU Gold `#8A704C`, Slate Blue `#C5CADF`, Light Slate `#DDE0ED`, white background, black body text. Secondary text uses a tint of SMU Blue rather than a new hue.
+Colours, typefaces and the lockup follow the SMU identity. SMU Blue `#141C52`, SMU Gold `#8A704C`, Slate Blue `#C5CADF` for lines only, Light Slate `#DDE0ED` for quiet fills, white ground, black body text. Anything else in the stylesheet is a tint of one of those.
 
-Typefaces follow SMU's guidance for digital applications: Oswald for headings, Open Sans for body. Both are self-hosted as subset WOFF2 in `assets/fonts/web/`. The Bootswatch theme's Google Fonts import is disabled, so the site makes no third-party requests other than the H5P embeds themselves.
+Oswald sets headings and Open Sans sets body copy, which is SMU's guidance for digital work. Both are self-hosted as subset WOFF2 in `assets/fonts/web/`, with their SIL Open Font Licence text alongside them, which the licence requires wherever the font files are served. The Bootswatch theme's Google Fonts import is switched off, so the pages make no third-party requests of their own.
 
-Logo derivatives live in `assets/logo/`. The print masters they came from are gitignored; keep them in the Library's own asset store.
+`assets/logo/` holds the two web-sized lockups. The print masters they came from are gitignored — they are around 240 megapixels each and belong in the Library's asset store, not in Git.
 
-## Not yet done
+## Running it
 
-### Needs a decision or an answer from the project owner
-
-- **Institutional details.** The About page no longer carries a placeholder box asking for them, but the ownership statement, a named accessibility contact and a review date are still not on the site.
-- **Custom domain.** `_quarto.yml` sets `site-url` to `https://smu-libraries.github.io/lib002/`. Change it if a custom domain is adopted.
-- **Analytics.** None configured. Nothing is currently tracked.
-- **Homepage design.** The hero uses two side-by-side calls to action, a floating shadowed card and a gold accent rule. These read as a product landing page rather than a Library resource and are the main outstanding design question.
-- **Book title spelling.** Module 2 book 3 is "Organizing Your References" (American -z) against British spelling elsewhere on the site. Module 3 book 3 is "Data Pre-processing & Cleaning" in H5P but "and" on the site. Align whichever way is preferred.
-
-### Needs doing
-
-- **Font licences.** Oswald and Open Sans are SIL Open Font License. The licence text must accompany redistribution, and serving the WOFF2 files publicly counts. The SMU font packs did not include `OFL.txt`. Add the licence files to `assets/fonts/web/`.
-- **Module 3 load check.** Five H5P runtimes on one page is the heaviest thing on the site, roughly 97 requests per book. Try it on a mid-range phone. If it drags, switch that page from stacked books to loading each on demand; `AGENTS.md` records the threshold.
-- **Lazy-loading check.** Books after the first are marked `loading="lazy"`. This could not be verified in the preview browser, which reports `visibilityState: hidden` and never evaluates viewport intersection, so every frame loads regardless. Confirm in a real window with the network panel open.
-
-## Running the site
-
-Quarto is installed and on the system PATH. From the repository root:
+Quarto is on the system PATH. From the repository root:
 
 ```powershell
 quarto preview
 ```
 
-Starts a local server that reloads on save. `Ctrl + C` to stop. Use `quarto render` only to produce `_site/` for inspection; a running preview holds `_site` and will make a concurrent render fail. If a build behaves strangely, delete `_site` and `.quarto` and try again — both are generated and gitignored.
+Reloads on save; `Ctrl + C` to stop. Use `quarto render` only to inspect the built output — a running preview holds `_site` and a concurrent render fails with a file-in-use error. If a build misbehaves, delete `_site` and `.quarto`; both are generated and gitignored.
 
-## Publishing
+## Things worth knowing before changing layout
 
-`.github/workflows/publish.yml` renders and deploys on every push to `main`, and can be run manually from the Actions tab. GitHub Pages must be set to build from GitHub Actions under **Settings → Pages → Build and deployment → Source**.
+These were expensive to find and are easy to trip over again.
 
-The public URL is determined by the organisation and repository name, so it is `https://smu-libraries.github.io/lib002/` unless the repository is renamed or a custom domain is configured.
+- **Quarto promotes a leading level-one heading into the title block** when the front matter has no `title`, even when the heading is raw HTML and even wrapped in a div. The homepage therefore sets a `title` and hides the generated title block, keeping its own `h1` inside `.lib-hero` so the tinted band can be sized by its contents.
+- **`description` renders visibly as well as into the meta tag.** Use `description-meta`.
+- **The article layout caps content at 799px** and reserves margin columns this site does not use. The project runs `page-layout: full` and sets one shared content width in the stylesheet instead, keyed on `.page-lead`, which every page except the homepage and 404 carries.
+- **Full-bleed via `calc(50% - 50vw)` overshoots by half a scrollbar**, because `100vw` counts it and the visible area does not. It is clipped on `.quarto-container`; clipping on `html` does not work, as overflow on the root propagates to the viewport.
+- **Pandoc treats a bare `<hr>` as an unclosed raw HTML block**, which stops the following `:::` fences being recognised. Write `<hr />`.
+
+## Optional, not outstanding
+
+- **A privacy line.** The site sets no cookies and has no analytics, but the embedded books are served from `smu.h5p.com`, which sets seven — a session cookie and CloudFront signing cookies, functional rather than tracking. Nothing on the public site identifies an individual. A sentence on About saying so was drafted and not adopted; add it if SMU policy wants one.
+- **Usage statistics.** None are collected. H5P.com's own dashboard is the cheapest place to look for per-book engagement, since it needs nothing added here. For site-level visitor numbers, the least troublesome route is whatever SMU already uses institutionally. Google Analytics would undo the no-third-party-requests position and would then need a cookie notice.
+- **A custom domain.** `_quarto.yml` sets `site-url` to the GitHub Pages address; change it if a domain is adopted. Requires DNS from SMU IT.
+- **Workflow action versions** are each one major behind current. They work; bump when convenient.
