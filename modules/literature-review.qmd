@@ -16,7 +16,7 @@ Three interactive books, written to follow on from one another. You can still op
 
 1. [Defining Your Research Question](#defining-your-research-question)
 2. [Basic Literature Review](#basic-literature-review)
-3. [Organizing Your References](#organizing-your-references)
+3. [Organising Your References](#organising-your-references)
 :::
 
 <!-- Loaded before the iframes on purpose. The resizer runs immediately and
@@ -62,12 +62,12 @@ If this interactive book does not load, [open Basic Literature Review in a new w
 
 <p class="book-label">Book 3 of 3</p>
 
-## Organizing Your References
+## Organising Your References
 
 <div class="h5p-frame">
 <iframe
   src="https://smu.h5p.com/content/1292627958615413189/embed"
-  title="Interactive book: Organizing Your References"
+  title="Interactive book: Organising Your References"
   loading="lazy"
   allow="fullscreen"
   allowfullscreen>
@@ -75,7 +75,7 @@ If this interactive book does not load, [open Basic Literature Review in a new w
 </div>
 
 ::: {.module-note}
-If this interactive book does not load, [open Organizing Your References in a new window](https://smu.h5p.com/content/1292627958615413189){target="_blank" rel="noopener"}.
+If this interactive book does not load, [open Organising Your References in a new window](https://smu.h5p.com/content/1292627958615413189){target="_blank" rel="noopener"}.
 :::
 
 ::: {.module-navigation}
