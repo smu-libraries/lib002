@@ -120,8 +120,18 @@ h1 {
   line-height: 1.08;
 }
 
+// Cosmo underlines every h2 with a 1px #dee2e6 rule — a grey from outside the
+// SMU palette, and the kind of decorative line under a title the brand
+// guidance rules out in favour of whitespace.
 h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
   line-height: 1.2;
+}
+
+// Buttons were the only square corners left against 0.8rem cards and panels.
+.btn {
+  border-radius: 0.4rem;
 }
 
 .navbar {
@@ -193,11 +203,7 @@ main.content:has(.page-lead) {
 // Visitors arrive already wanting the modules, so the hero orients and gets
 // out of the way rather than making a case for itself.
 .lib-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(260px, 0.7fr);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
-  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
 }
 
 .lib-hero::before {
@@ -230,33 +236,13 @@ main.content:has(.lib-hero) .quarto-title-block h1.title {
   line-height: 1.08;
 }
 
-.lib-hero__content > p:not(.eyebrow) {
+.lib-hero p {
   max-width: 720px;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   color: var(--lib-muted);
   font-size: clamp(1.15rem, 2vw, 1.38rem);
 }
 
-.lib-hero .btn {
-  margin: 0.3rem 0.5rem 0.3rem 0;
-}
-
-.lib-hero__aside {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(20, 28, 82, 0.15);
-  border-radius: 0.8rem;
-  box-shadow: var(--lib-shadow);
-  color: var(--lib-muted);
-}
-
-.lib-hero__aside hr {
-  margin-block: 1.4rem;
-  border-color: var(--lib-border);
-  opacity: 1;
-}
-
-.hero-note__label,
 .eyebrow,
 .module-label {
   margin-bottom: 0.65rem;
@@ -341,10 +327,17 @@ main.content:has(.lib-hero) .quarto-title-block h1.title {
   content: " →";
 }
 
+// These two close the page together, so they are cut from one shape: same
+// width, same corner radius, same inset, differing only in fill. The soft band
+// used to run full bleed, which left it 34px wider than the panel with a 17px
+// inset against the panel's 68px — two unrelated boxes rather than a pair.
+.content-band--soft,
+.support-panel {
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-radius: 0.8rem;
+}
+
 .content-band--soft {
-  width: 100%;
-  max-width: none;
-  padding-inline: max(1rem, calc((100% - 1160px) / 2));
   background: var(--lib-slate-pale);
 }
 
@@ -372,10 +365,8 @@ main.content:has(.lib-hero) .quarto-title-block h1.title {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 2rem;
   align-items: center;
-  margin-block: clamp(4rem, 8vw, 7rem);
-  padding: clamp(2rem, 5vw, 4rem);
+  margin-block: clamp(1.5rem, 3vw, 3rem);
   background: var(--lib-navy);
-  border-radius: 0.8rem;
   color: #ffffff;
 }
 
@@ -560,13 +551,8 @@ main.content:has(.lib-hero) .quarto-title-block h1.title {
 }
 
 @media (max-width: 820px) {
-  .lib-hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
   .lib-hero::before {
-    height: 850px;
+    height: 520px;
   }
 
   .module-grid,

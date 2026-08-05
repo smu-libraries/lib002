@@ -10,23 +10,9 @@ page-layout: full
 title: "Graduate Research Essentials"
 ---
 
-:::: {.lib-hero}
-::: {.lib-hero__content}
-LIB002 is a self-paced learning resource developed by SMU Libraries. It introduces essential research practices and points you towards useful tools, resources and specialist support.
+::: {.lib-hero}
+LIB002 is a self-paced learning resource developed by SMU Libraries for postgraduate researchers and research staff. It introduces essential research practices and points you towards useful tools, resources and specialist support.
 :::
-
-::: {.lib-hero__aside}
-<p class="hero-note__label">Designed for</p>
-
-Postgraduate researchers and research staff at any stage of their work.
-
-<hr />
-
-<p class="hero-note__label">Learn your way</p>
-
-Start anywhere, focus on what you need, and return whenever a question arises.
-:::
-::::
 
 ::: {#modules .content-band}
 ## Explore the modules
